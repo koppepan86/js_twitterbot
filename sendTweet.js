@@ -8,7 +8,7 @@ function sendTweet(text) {
     
     client.post('statuses/update', { status: text })
         .then(function (tweet) {
-            console.log(tweet);
+            // console.log(tweet);
         })
         .catch(function (error) {
             //Error 
