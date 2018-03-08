@@ -1,15 +1,15 @@
 'use strict';
-var twitter = require('twitter');
-var client = require("./accessToken");
-var getProfile = require("./getProfile");
-var reg = require("./reg");
-var sendTweet = require("./sendTweet");
+let twitter = require('twitter');
+let client = require("./accessToken");
+let getProfile = require("./getProfile");
+let reg = require("./reg");
+let sendTweet = require("./sendTweet");
 
 function reaction(text){
     //名前抜出ロジック
     //TODO:
     //まだがばがばなので要修正
-    var sliceText = text.slice(text.indexOf(" ") + 1);
+    let sliceText = text.slice(text.indexOf(" ") + 1);
     
     //文字列チェック
     if(reg(sliceText) == true){
@@ -36,7 +36,9 @@ function updateName(profile, text){
         if(error){
             sendTweet("@lalalaworld86 名前変えようとしたらエラー出た");
         }else{
-            sendTweet("@lalalaworld86 " + profile["name"] + "に名前を変えた！");
+            let date = new Date();
+            let now = "(" + date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDay() + "/" + date.getHours() + "/" + date.getMinutes()+ ")";
+            sendTweet("@lalalaworld86 " + profile["name"] + "に名前を変えた！" + now);
         }
     });
 }

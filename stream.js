@@ -5,7 +5,8 @@ var reactionFunc = require("./reactionFunction");
 
 //Streamより自身へのリプライを取得し、その内容に応じて反応する
 var stream = client.stream('statuses/filter',
-{ 'track': '@lalalaworldsec' },
+// { 'track': '@lalalaworldsec' },
+{ 'track': '@lalalaworld86' },
 function (stream) {
     stream.on('data', function (tweet) {
         /*ツイートの全情報表示ログ */
